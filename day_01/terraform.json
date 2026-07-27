@@ -1,0 +1,270 @@
+{
+  "version": 4,
+  "terraform_version": "1.15.5",
+  "serial": 10,
+  "lineage": "d4d2fa9f-49e1-bc15-b9f8-015d7e2cc25e",
+  "outputs": {
+    "SSH_rule_id": {
+      "value": "sgr-0d187b740098f1ec9",
+      "type": "string"
+    },
+    "https_rule_id": {
+      "value": "sgr-0804c41596a10c4fd",
+      "type": "string"
+    },
+    "sg_id": {
+      "value": "sg-0b91558971b50a362",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "allow_tls",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:ap-south-1:618587933954:security-group/sg-0b91558971b50a362",
+            "description": "day1 tf sg",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              },
+              {
+                "cidr_blocks": [],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [
+                  "::/0"
+                ],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0b91558971b50a362",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 22,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 22
+              },
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 443
+              }
+            ],
+            "name": "aws_sg",
+            "name_prefix": "",
+            "owner_id": "618587933954",
+            "region": "ap-south-1",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "tf day_01 sg",
+              "env": "dev"
+            },
+            "tags_all": {
+              "Name": "tf day_01 sg",
+              "env": "dev"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-06d8ffa23ad27eb53"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "618587933954",
+            "id": "sg-0b91558971b50a362",
+            "region": "ap-south-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc_security_group_egress_rule",
+      "name": "allow_all_traffic_ipv4",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:ap-south-1:618587933954:security-group-rule/sgr-0444504352942dcdd",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": null,
+            "from_port": null,
+            "id": "sgr-0444504352942dcdd",
+            "ip_protocol": "-1",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "ap-south-1",
+            "security_group_id": "sg-0b91558971b50a362",
+            "security_group_rule_id": "sgr-0444504352942dcdd",
+            "tags": null,
+            "tags_all": {},
+            "to_port": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "618587933954",
+            "id": "sgr-0444504352942dcdd",
+            "region": "ap-south-1"
+          },
+          "dependencies": [
+            "aws_security_group.allow_tls"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc_security_group_egress_rule",
+      "name": "allow_all_traffic_ipv6",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:ap-south-1:618587933954:security-group-rule/sgr-0b0de7a0cddcd99ad",
+            "cidr_ipv4": null,
+            "cidr_ipv6": "::/0",
+            "description": null,
+            "from_port": null,
+            "id": "sgr-0b0de7a0cddcd99ad",
+            "ip_protocol": "-1",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "ap-south-1",
+            "security_group_id": "sg-0b91558971b50a362",
+            "security_group_rule_id": "sgr-0b0de7a0cddcd99ad",
+            "tags": null,
+            "tags_all": {},
+            "to_port": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "618587933954",
+            "id": "sgr-0b0de7a0cddcd99ad",
+            "region": "ap-south-1"
+          },
+          "dependencies": [
+            "aws_security_group.allow_tls"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc_security_group_ingress_rule",
+      "name": "allow_tls_ipv4",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:ap-south-1:618587933954:security-group-rule/sgr-0804c41596a10c4fd",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": null,
+            "from_port": 443,
+            "id": "sgr-0804c41596a10c4fd",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "ap-south-1",
+            "security_group_id": "sg-0b91558971b50a362",
+            "security_group_rule_id": "sgr-0804c41596a10c4fd",
+            "tags": null,
+            "tags_all": {},
+            "to_port": 443
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "618587933954",
+            "id": "sgr-0804c41596a10c4fd",
+            "region": "ap-south-1"
+          },
+          "dependencies": [
+            "aws_security_group.allow_tls"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc_security_group_ingress_rule",
+      "name": "ssh_from_internate",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:ap-south-1:618587933954:security-group-rule/sgr-0d187b740098f1ec9",
+            "cidr_ipv4": "0.0.0.0/0",
+            "cidr_ipv6": null,
+            "description": null,
+            "from_port": 22,
+            "id": "sgr-0d187b740098f1ec9",
+            "ip_protocol": "tcp",
+            "prefix_list_id": null,
+            "referenced_security_group_id": null,
+            "region": "ap-south-1",
+            "security_group_id": "sg-0b91558971b50a362",
+            "security_group_rule_id": "sgr-0d187b740098f1ec9",
+            "tags": null,
+            "tags_all": {},
+            "to_port": 22
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "618587933954",
+            "id": "sgr-0d187b740098f1ec9",
+            "region": "ap-south-1"
+          },
+          "dependencies": [
+            "aws_security_group.allow_tls"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
