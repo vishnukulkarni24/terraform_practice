@@ -1,0 +1,68 @@
+# ==========================
+# Terraform
+# ==========================
+**/.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Keep lock file
+!.terraform.lock.hcl
+
+# Variable files (may contain secrets)
+*.tfvars
+*.tfvars.json
+
+# Terraform plans
+*.tfplan
+
+# ==========================
+# AWS Credentials
+# ==========================
+.aws/
+credentials
+config
+
+# ==========================
+# Environment files
+# ==========================
+.env
+.env.*
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# OS Files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# VS Code
+# ==========================
+.vscode/
+
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# ==========================
+# Temporary files
+# ==========================
+*.tmp
+*.bak
