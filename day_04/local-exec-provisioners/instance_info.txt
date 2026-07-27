@@ -1,0 +1,3 @@
+aws ec2 instance is running on 65.0.91.171
+git version 2.43.0
+
